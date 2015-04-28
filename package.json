@@ -1,0 +1,19 @@
+{
+  "name": "gm2-vector2",
+  "version": "0.0.1",
+  "description": "2d geometry - vector2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeglebug/gm2-vector2.git"
+  },
+  "author": "Stuart Lee <updownleftright@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beeglebug/gm2-vector2/issues"
+  },
+  "homepage": "https://github.com/beeglebug/gm2-vector2#readme"
+}
