@@ -17,8 +17,8 @@ var Vector2 = function(x,y) {
  */
 Vector2.prototype.set = function(x, y) {
 
-	// if it has x and y properties we can assume it is a vector2 or similar
-	if(x.x !== undefined && x.y !== undefined) {
+	// if only 1 argument, and it has x and y properties we can assume it is a vector2 or similar
+	if(!y && (x.x !== undefined && x.y !== undefined)) {
 
 		this.x = x.x || 0;
 		this.y = x.y || 0;
