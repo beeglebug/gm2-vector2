@@ -9,7 +9,6 @@ var Vector2 = function(x,y) {
 
 	this.x = x || 0;
 	this.y = y || 0;
-
 };
 
 /**
@@ -31,7 +30,6 @@ Vector2.prototype.set = function(x, y) {
 	}
 
 	return this;
-
 };
 
 /**
@@ -42,7 +40,8 @@ Vector2.prototype.set = function(x, y) {
  */
 Vector2.prototype.add = function(x,y) {
 
-	if(x instanceof Vector2) {
+    // if only 1 argument, and it has x and y properties we can assume it is a vector2 or similar
+    if(!y && (x.x !== undefined && x.y !== undefined)) {
 
 		this.x += x.x;
 		this.y += x.y;
@@ -55,7 +54,6 @@ Vector2.prototype.add = function(x,y) {
 	}
 
 	return this;
-
 };
 
 /**
@@ -63,13 +61,22 @@ Vector2.prototype.add = function(x,y) {
  * for example: [1,3] - [2,2] = [-1,1]
  * @return {Vector2} the modified original vector
  */
-Vector2.prototype.subtract = function(v) {
+Vector2.prototype.subtract = function(x, y) {
 
-	this.x -= v.x;
-	this.y -= v.y;
+    // if only 1 argument, and it has x and y properties we can assume it is a vector2 or similar
+    if(!y && (x.x !== undefined && x.y !== undefined)) {
+
+        this.x -= x.x;
+        this.y -= x.y;
+
+    } else {
+
+        this.x -= x;
+        this.y -= y;
+
+    }
 
 	return this;
-
 };
 
 /**
@@ -84,7 +91,6 @@ Vector2.prototype.multiply = function(amount) {
 	this.y *= amount;
 
 	return this;
-
 };
 
 /**
@@ -98,7 +104,6 @@ Vector2.prototype.divide = function(scalar) {
 	this.y /= scalar;
 
 	return this;
-
 };
 
 /**
